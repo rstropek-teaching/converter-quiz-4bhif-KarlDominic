@@ -1,6 +1,9 @@
 var args = process.argv;
 
 if(args[4]==='to'&& args.length == 6){
+    // Remember: Don't repeat yourself.
+    // You solution works but the following lines of code look very similar. You could try to find a solution
+    // where similar code pieces are encapsulated e.g. in functions.
     switch(args[3]){
         case 'mm': process.stdout.write(args[2]+' mm are '+convertLength(1, args[5])+' '+args[5]+'\n'); break;
         case 'cm': process.stdout.write(args[2]+' cm are '+convertLength(10, args[5])+' '+args[5])+'\n'; break;
@@ -20,7 +23,10 @@ if(args[4]==='to'&& args.length == 6){
 
 function convertLength(from, into){
     
+    // Same comment as above: Don't repeat yourself. Try to avoid identical code (e.g. `isNaN(args[2]*from`)
+    // appearing multiple times in your program.
     switch(into){
+        // Format your code before committing it. VSCode has a nice *format* command for that.
         case 'mm': if(isNaN(args[2]*from/1)){
             process.stdout.write('Invalid parameters\n');process.exit(1);
         }
